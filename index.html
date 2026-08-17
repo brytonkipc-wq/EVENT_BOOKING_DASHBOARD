@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Booking Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tech Event Portal</h1>
+            <p id="welcome-msg">Welcome, Guest! Select your events below.</p>
+        </header>
+
+        <section class="controls">
+            <input type="text" id="search-input" placeholder="Search events by name..." />
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="workshop">Workshops</button>
+                <button class="filter-btn" data-category="keynote">Keynotes</button>
+            </div>
+        </section>
+
+        <main class="events-grid" id="events-container">
+            <article class="event-card" data-category="workshop" data-price="50" id="event-1">
+                <span class="badge">Workshop</span>
+                <h3>JS DOM Deep Dive</h3>
+                <p>Master element manipulation and event listeners.</p>
+                <p class="price">$50</p>
+                <button class="book-btn">Book Ticket</button>
+            </article>
+
+            <article class="event-card" data-category="keynote" data-price="120" id="event-2">
+                <span class="badge keynote-badge">Keynote</span>
+                <h3>The Future of Web Dev</h3>
+                <p>An inspiring talk on upcoming browser APIs and AI integration.</p>
+                <p class="price">$120</p>
+                <button class="book-btn">Book Ticket</button>
+            </article>
+
+            <article class="event-card" data-category="workshop" data-price="75" id="event-3">
+                <span class="badge">Workshop</span>
+                <h3>CSS Grid & Flexbox Mastery</h3>
+                <p>Build responsive visual layouts with zero frameworks.</p>
+                <p class="price">$75</p>
+                <button class="book-btn">Book Ticket</button>
+            </article>
+        </main>
+
+        <!-- Task 5 Promo Code UI Addition -->
+        <section class="promo-section">
+            <input type="text" id="promo-input" placeholder="Enter promo code (e.g. DEV20)" />
+            <button id="apply-promo-btn">Apply Code</button>
+            <span id="promo-message"></span>
+        </section>
+
+        <footer class="cart-summary" id="cart-summary">
+            <h3>Booking Summary</h3>
+            <p>Total Tickets: <span id="ticket-count">0</span></p>
+            <p>Subtotal: $<span id="subtotal-price">0</span></p>
+            <p>Discount: <span id="discount-amount">0%</span></p>
+            <p class="grand-total">Final Price: $<span id="total-price">0</span></p>
+            <div class="action-buttons">
+                <button id="checkout-btn" disabled>Proceed to Checkout</button>
+                <button id="reset-btn" class="reset-btn">Reset All</button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

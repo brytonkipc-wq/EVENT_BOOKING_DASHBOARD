@@ -1,0 +1,54 @@
+:root {
+    --primary-color: #4f46e5;
+    --secondary-color: #10b981;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-dark: #1e293b;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    padding: 20px;
+}
+
+.container { max-width: 900px; margin: 0 auto; }
+header { margin-bottom: 20px; }
+
+.controls { display: flex; justify-content: space-between; gap: 15px; margin-bottom: 25px; }
+#search-input { flex: 1; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 1rem; }
+
+.filter-btn {
+    padding: 10px 16px; border: 1px solid var(--primary-color); background: white;
+    color: var(--primary-color); border-radius: 8px; cursor: pointer; font-weight: 600;
+}
+.filter-btn.active { background: var(--primary-color); color: white; }
+
+.events-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+
+.event-card {
+    background: var(--card-bg); border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); transition: transform 0.2s, box-shadow 0.2s;
+}
+.event-card.selected { border: 2px solid var(--secondary-color); background-color: #f0fdf4; }
+
+.badge { background: #e0e7ff; color: #3730a3; padding: 4px 8px; border-radius: 6px; font-size: 0.8rem; font-weight: bold; }
+.keynote-badge { background: #fef3c7; color: #92400e; }
+
+.book-btn {
+    width: 100%; padding: 10px; background: var(--primary-color); color: white;
+    border: none; border-radius: 6px; cursor: pointer; margin-top: 15px; font-weight: bold;
+}
+.book-btn.booked { background: #ef4444; }
+
+.promo-section { margin-top: 25px; display: flex; gap: 10px; align-items: center; }
+#promo-input { padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; }
+#apply-promo-btn { padding: 8px 14px; background: #3b82f6; color: white; border: none; border-radius: 6px; cursor: pointer; }
+
+.cart-summary { margin-top: 25px; background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; }
+.grand-total { font-weight: bold; font-size: 1.2rem; color: var(--primary-color); }
+.action-buttons { display: flex; gap: 10px; margin-top: 15px; }
+.reset-btn { background: #64748b; color: white; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; }
+
+.hidden { display: none !important; }
